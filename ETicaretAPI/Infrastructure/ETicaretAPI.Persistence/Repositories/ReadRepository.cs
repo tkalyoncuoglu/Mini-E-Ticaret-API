@@ -52,5 +52,9 @@ namespace ETicaretAPI.Persistence.Repositories
             return await query.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
         }
 
+        public int Count()
+        {
+            return Table.AsQueryable().Count();    
+        }
     }
 }
